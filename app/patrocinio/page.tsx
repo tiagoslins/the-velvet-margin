@@ -30,7 +30,7 @@ function SponsorshipContent() {
         </div>
       </div>
       <div className="sponsor-art-panel">
-        <img src="/the-velvet-margin-album.jpg" alt={pt ? "Capa do álbum The Velvet Margin" : "The Velvet Margin album artwork"} />
+        <img src="/the-velvet-margin-album.webp" alt={pt ? "Capa do álbum The Velvet Margin" : "The Velvet Margin album artwork"} />
         <div className="sponsor-art-caption"><span>THE VELVET MARGIN</span><span>2026—2027</span></div>
       </div>
     </section>

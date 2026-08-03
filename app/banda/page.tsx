@@ -4,9 +4,9 @@ import { SiteShell, useSiteLanguage } from "../components/SiteShell";
 
 const members = [
   { name: "Arthur Krena", rolePt: "Voz principal", roleEn: "Lead vocals", image: null, className: "portrait-placeholder" },
-  { name: "Diego Aquino", rolePt: "Contrabaixo", roleEn: "Bass", image: "/members/diego-aquino.png", className: "portrait-vertical" },
-  { name: "Yves Remont", rolePt: "Guitarra", roleEn: "Guitar", image: "/members/yves-remont.png", className: "portrait-vertical" },
-  { name: "Rubens de Oliveira", rolePt: "Bateria e percussão", roleEn: "Drums and percussion", image: "/members/rubens-de-oliveira.jpg", className: "portrait-wide" },
+  { name: "Diego Aquino", rolePt: "Contrabaixo", roleEn: "Bass", image: "/members/diego-aquino.webp", className: "portrait-vertical" },
+  { name: "Yves Remont", rolePt: "Guitarra", roleEn: "Guitar", image: "/members/yves-remont.webp", className: "portrait-vertical" },
+  { name: "Rubens de Oliveira", rolePt: "Bateria e percussão", roleEn: "Drums and percussion", image: "/members/rubens-de-oliveira.webp", className: "portrait-wide" },
 ];
 
 export default function BandPage() { return <SiteShell><BandContent /></SiteShell>; }
@@ -16,7 +16,7 @@ function BandContent() {
   const pt = language === "pt";
   return <main className="inner-page">
     <section className="page-hero band-page-hero">
-      <div className="page-hero-image"><img src="/members/rubens-de-oliveira.jpg" alt="Rubens de Oliveira em apresentação ao vivo" /></div>
+      <div className="page-hero-image"><img src="/members/rubens-de-oliveira.webp" alt="Rubens de Oliveira em apresentação ao vivo" /></div>
       <div className="page-title"><p className="kicker">{pt ? "A BANDA" : "THE BAND"}</p><h1>{pt ? "Quatro músicos. Uma mesma margem." : "Four musicians. One shared margin."}</h1></div>
     </section>
     <section className="band-manifesto section-light">
@@ -36,7 +36,7 @@ function BandContent() {
       </article>)}
     </section>
     <section className="creative-credit">
-      <div className="creative-portrait"><img src="/members/tiago-lins.jpg" alt={pt ? "Tiago Lins, compositor e produtor musical" : "Tiago Lins, songwriter and music producer"} /></div>
+      <div className="creative-portrait"><img src="/members/tiago-lins.webp" alt={pt ? "Tiago Lins, compositor e produtor musical" : "Tiago Lins, songwriter and music producer"} /></div>
       <div className="creative-copy">
         <p className="kicker">{pt ? "CRIAÇÃO E PRODUÇÃO" : "CREATION AND PRODUCTION"}</p>
         <h2>Tiago Lins</h2>

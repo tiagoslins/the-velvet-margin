@@ -15,7 +15,7 @@ function HomeContent() {
     <main>
       <section className="home-hero">
         <div className="hero-album-art" aria-hidden="true">
-          <img src="/the-velvet-margin-hero.png" alt="" />
+          <img src="/the-velvet-margin-hero.webp" alt="" />
         </div>
         <div className="hero-shade" />
         <div className="hero-copy-wrap">
@@ -45,7 +45,7 @@ function HomeContent() {
       </section>
 
       <section className="album-feature">
-        <div className="album-cover-wrap"><img src="/the-velvet-margin-album.jpg" alt={pt ? "Capa do primeiro álbum The Velvet Margin" : "The Velvet Margin debut album cover"} /></div>
+        <div className="album-cover-wrap"><img src="/the-velvet-margin-album.webp" alt={pt ? "Capa do primeiro álbum The Velvet Margin" : "The Velvet Margin debut album cover"} /></div>
         <div className="album-feature-copy">
           <p className="kicker">{pt ? "PRIMEIRO ÁLBUM" : "DEBUT ALBUM"}</p>
           <h2>The Velvet Margin</h2>
