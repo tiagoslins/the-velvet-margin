@@ -58,7 +58,7 @@ const members: Member[] = [
     name: "Tiago Lins",
     rolePt: "Composição, produção musical e engenharia de áudio",
     roleEn: "Songwriting, music production and audio engineering",
-    image: "/members/tiago-lins.webp",
+    image: "/members/tiago-lins-bio.webp",
     className: "portrait-vertical",
     bioPt: [
       "Tiago Lins é compositor, produtor musical e engenheiro de áudio formado em Audio Recording and Production pelo Institute of Audio Research, em Nova York, Estados Unidos. Também é cientista social pela Universidade Federal de São Carlos (UFSCar).",
