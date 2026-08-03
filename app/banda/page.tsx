@@ -40,14 +40,17 @@ function BandContent() {
       <div className="creative-copy">
         <p className="kicker">{pt ? "CRIAÇÃO E PRODUÇÃO" : "CREATION AND PRODUCTION"}</p>
         <h2>Tiago Lins</h2>
-        <p className="creative-role">{pt ? "Compositor • Produtor musical • Engenheiro de áudio" : "Songwriter • Music producer • Audio engineer"}</p>
+        <p className="creative-role">{pt ? "Compositor • Produtor musical • Engenheiro de áudio • Cientista social" : "Songwriter • Music producer • Audio engineer • Social scientist"}</p>
         <div className="creative-bio">
           <p>{pt
-            ? "Tiago Lins é compositor, produtor musical e engenheiro de áudio. Idealizador de The Velvet Margin, conduz a criação das canções e a identidade sonora do projeto, unindo sensibilidade artística, domínio técnico e uma abordagem narrativa da produção musical."
-            : "Tiago Lins is a songwriter, music producer and audio engineer. As the creator of The Velvet Margin, he leads the songwriting and sonic identity of the project, bringing together artistic sensitivity, technical craft and a narrative approach to music production."}</p>
+            ? "Tiago Lins é compositor, produtor musical e engenheiro de áudio formado em Audio Recording and Production pelo Institute of Audio Research, em Nova York, Estados Unidos. Também é cientista social pela Universidade Federal de São Carlos (UFSCar)."
+            : "Tiago Lins is a songwriter, music producer and audio engineer with a degree in Audio Recording and Production from the Institute of Audio Research in New York City, United States. He also holds a degree in Social Sciences from the Federal University of São Carlos (UFSCar)."}</p>
           <p>{pt
-            ? "Sua trajetória também abrange produção de áudio para cinema, videogames e experiências interativas. Como proponente do projeto cultural The Velvet Margin, aprovado pelo ProAC ICMS, atua ainda na coordenação executiva da produção do primeiro álbum da banda."
-            : "His work also spans audio production for film, video games and interactive experiences. As the lead applicant for The Velvet Margin cultural project, approved by ProAC ICMS, he also serves as executive coordinator for the production of the band's debut album."}</p>
+            ? "Sua trajetória reúne composição, gravação, produção musical, edição, mixagem e masterização, além de trabalhos em audiovisual, podcasts e conteúdo digital. Sua experiência técnica também abrange produção de áudio para cinema e videogames, sound design e implementação de áudio interativo na Unreal Engine."
+            : "His career spans songwriting, recording, music production, editing, mixing and mastering, as well as work in audiovisual media, podcasts and digital content. His technical experience also includes audio production for film and video games, sound design and interactive audio implementation in Unreal Engine."}</p>
+          <p>{pt
+            ? "Idealizador de The Velvet Margin, Tiago conduz a criação das canções e a identidade sonora do projeto. É proponente, responsável artístico, produtor musical e coordenador executivo do projeto cultural aprovado integralmente no ProAC ICMS nº 56889, dedicado à produção e ao lançamento do primeiro álbum da banda."
+            : "As the creator of The Velvet Margin, Tiago leads the songwriting and sonic identity of the project. He is the lead applicant, artistic director, music producer and executive coordinator of the cultural project fully approved under ProAC ICMS No. 56889, dedicated to producing and releasing the band's debut album."}</p>
         </div>
       </div>
     </section>
