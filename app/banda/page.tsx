@@ -36,6 +36,24 @@ function BandContent() {
       </article>)}
     </section>
     <section className="creative-credit">
+      <div className="creative-portrait"><img src="/members/rubens-de-oliveira.webp" alt={pt ? "Rubens de Oliveira, baterista e percussionista" : "Rubens de Oliveira, drummer and percussionist"} /></div>
+      <div className="creative-copy">
+        <p className="kicker">{pt ? "BATERIA E PERCUSSÃO" : "DRUMS AND PERCUSSION"}</p>
+        <h2>Rubens de Oliveira</h2>
+        <div className="creative-bio">
+          <p>{pt
+            ? "Rubens de Oliveira possui ampla formação em música de concerto e música popular. Estudou em instituições como a Escola de Música do Estado de São Paulo (EMESP), a Escola Municipal de Música de São Paulo, a Universidade de São Paulo (USP) e a Universidade Federal de Minas Gerais (UFMG), especializando-se em percussão e bateria."
+            : "Rubens de Oliveira has extensive training in both concert and popular music. He studied at institutions including the São Paulo State School of Music (EMESP), the São Paulo Municipal School of Music, the University of São Paulo (USP) and the Federal University of Minas Gerais (UFMG), specializing in percussion and drums."}</p>
+          <p>{pt
+            ? "É timpanista e chefe do naipe de percussão da Orquestra do Theatro São Pedro. Também atua como compositor e arranjador na companhia Circo Enxame e no grupo de música instrumental Ôctôctô."
+            : "He is timpanist and principal percussionist of the São Pedro Theatre Orchestra. He also works as a composer and arranger with the Circo Enxame company and the instrumental music group Ôctôctô."}</p>
+          <p>{pt
+            ? "Ao longo de sua trajetória, apresentou-se em diversos países, tanto em concertos quanto em projetos de música popular. Participou de importantes gravações, incluindo álbuns da Orquestra Jovem Tom Jobim e da pianista Karin Fernandes com a Orquestra do Theatro São Pedro, além dos discos Pé com Pé, do grupo Palavra Cantada, e Vira Lata na Via Láctea, do cantor e compositor Tom Zé."
+            : "Throughout his career, he has performed in several countries in both concert and popular music projects. His recording credits include albums by the Tom Jobim Youth Orchestra and pianist Karin Fernandes with the São Pedro Theatre Orchestra, as well as Pé com Pé by Palavra Cantada and Vira Lata na Via Láctea by singer-songwriter Tom Zé."}</p>
+        </div>
+      </div>
+    </section>
+    <section className="creative-credit">
       <div className="creative-portrait"><img src="/members/tiago-lins.webp" alt={pt ? "Tiago Lins, compositor e produtor musical" : "Tiago Lins, songwriter and music producer"} /></div>
       <div className="creative-copy">
         <p className="kicker">{pt ? "CRIAÇÃO E PRODUÇÃO" : "CREATION AND PRODUCTION"}</p>
@@ -49,8 +67,8 @@ function BandContent() {
             ? "Sua trajetória reúne composição, gravação, produção musical, edição, mixagem e masterização, além de trabalhos em audiovisual, podcasts e conteúdo digital. Sua experiência técnica também abrange produção de áudio para cinema e videogames, sound design e implementação de áudio interativo na Unreal Engine."
             : "His career spans songwriting, recording, music production, editing, mixing and mastering, as well as work in audiovisual media, podcasts and digital content. His technical experience also includes audio production for film and video games, sound design and interactive audio implementation in Unreal Engine."}</p>
           <p>{pt
-            ? "Idealizador de The Velvet Margin, Tiago conduz a criação das canções e a identidade sonora do projeto. É proponente, responsável artístico, produtor musical e coordenador executivo do projeto cultural aprovado integralmente no ProAC ICMS nº 56889, dedicado à produção e ao lançamento do primeiro álbum da banda."
-            : "As the creator of The Velvet Margin, Tiago leads the songwriting and sonic identity of the project. He is the lead applicant, artistic director, music producer and executive coordinator of the cultural project fully approved under ProAC ICMS No. 56889, dedicated to producing and releasing the band's debut album."}</p>
+            ? "Idealizador de The Velvet Margin, Tiago conduz a criação das canções e a identidade sonora do projeto. É responsável artístico, produtor musical e coordenador executivo da produção do primeiro álbum da banda."
+            : "As the creator of The Velvet Margin, Tiago leads the songwriting and sonic identity of the project. He serves as artistic director, music producer and executive coordinator for the production of the band's debut album."}</p>
         </div>
       </div>
     </section>
