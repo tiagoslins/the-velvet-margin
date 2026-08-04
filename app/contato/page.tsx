@@ -4,6 +4,7 @@ import { FormEvent, useState } from "react";
 import { SiteShell, useSiteLanguage } from "../components/SiteShell";
 
 const whatsapp = "https://wa.me/5511958608379";
+const commercialDeck = "/documentos/apresentacao-comercial-the-velvet-margin";
 
 export default function ContactPage() { return <SiteShell><ContactContent /></SiteShell>; }
 
@@ -52,9 +53,10 @@ function ContactContent() {
     <section className="contact-copy">
       <p className="kicker">{pt ? "CONTATO PARA EMPRESAS" : "BUSINESS CONTACT"}</p>
       <h1>{pt ? "Vamos construir uma parceria." : "Let’s build a partnership."}</h1>
-      <p>{pt ? "Fale com a equipe para receber a apresentação comercial, esclarecer o processo de incentivo ou solicitar uma proposta personalizada." : "Contact the team to receive the sponsorship deck, understand the incentive process or request a tailored proposal."}</p>
+      <p>{pt ? "Fale com a equipe para acessar a apresentação comercial, esclarecer o processo de incentivo ou solicitar uma proposta personalizada." : "Contact the team to access the sponsorship deck, understand the incentive process or request a tailored proposal."}</p>
       <div className="contact-direct-links">
         <span>contato@thevelvetmargin.com.br</span>
+        <a href={commercialDeck} target="_blank" rel="noreferrer">{pt ? "Baixar apresentação comercial" : "Download sponsorship deck"} <span>↗</span></a>
         <a href={`${whatsapp}?text=Olá%2C%20gostaria%20de%20apresentar%20o%20projeto%20The%20Velvet%20Margin%20à%20minha%20empresa.`} target="_blank" rel="noreferrer">{pt ? "WhatsApp: (11) 95860-8379" : "WhatsApp: +55 11 95860-8379"} <span>↗</span></a>
       </div>
 
