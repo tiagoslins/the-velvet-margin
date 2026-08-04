@@ -8,8 +8,8 @@ type Language = "pt" | "en";
 const LanguageContext = createContext<{language: Language; setLanguage: (language: Language) => void}>({language: "pt", setLanguage: () => {}});
 
 const nav = {
-  pt: [["Início", "/"], ["Artistas & Equipe", "/banda"], ["O Álbum", "/album"], ["Patrocínio", "/patrocinio"], ["Imprensa", "/imprensa"], ["Contato", "/contato"]],
-  en: [["Home", "/"], ["Artists & Team", "/banda"], ["The Album", "/album"], ["Sponsorship", "/patrocinio"], ["Press", "/imprensa"], ["Contact", "/contato"]],
+  pt: [["Início", "/"], ["Artistas & Equipe", "/banda"], ["O Álbum", "/album"], ["Para empresas", "/patrocinio"], ["Contato", "/contato"]],
+  en: [["Home", "/"], ["Artists & Team", "/banda"], ["The Album", "/album"], ["For Companies", "/patrocinio"], ["Contact", "/contato"]],
 };
 
 export function useSiteLanguage() { return useContext(LanguageContext); }
@@ -49,7 +49,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       <footer>
         <Link className="wordmark" href="/">THE VELVET MARGIN</Link>
         <p>{language === "pt" ? "Música autoral entre a sombra e a luz." : "Original music between shadow and light."}</p>
-        <div><span>thevelvetmargin@hotmail.com</span><a href="https://wa.me/5511958608379" target="_blank" rel="noreferrer">(11) 95860-8379</a><span>© 2026 — {language === "pt" ? "Todos os direitos reservados." : "All rights reserved."}</span></div>
+        <div><a href="mailto:contato@thevelvetmargin.com.br">contato@thevelvetmargin.com.br</a><a href="https://wa.me/5511958608379" target="_blank" rel="noreferrer">(11) 95860-8379</a><span>© 2026 — {language === "pt" ? "Todos os direitos reservados." : "All rights reserved."}</span></div>
       </footer>
     </LanguageContext.Provider>
   );
