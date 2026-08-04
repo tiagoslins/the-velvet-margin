@@ -49,7 +49,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       <footer>
         <Link className="wordmark" href="/">THE VELVET MARGIN</Link>
         <p>{language === "pt" ? "Música autoral entre a sombra e a luz." : "Original music between shadow and light."}</p>
-        <div><a href="mailto:thevelvetmargin@hotmail.com">thevelvetmargin@hotmail.com</a><a href="https://wa.me/5511958608379" target="_blank" rel="noreferrer">(11) 95860-8379</a><span>© 2026 — {language === "pt" ? "Todos os direitos reservados." : "All rights reserved."}</span></div>
+        <div><span>thevelvetmargin@hotmail.com</span><a href="https://wa.me/5511958608379" target="_blank" rel="noreferrer">(11) 95860-8379</a><span>© 2026 — {language === "pt" ? "Todos os direitos reservados." : "All rights reserved."}</span></div>
       </footer>
     </LanguageContext.Provider>
   );
