@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef, useState } from "react";
 import { SiteShell, useSiteLanguage } from "../components/SiteShell";
 
 const tracks = [
@@ -21,13 +22,60 @@ const platforms = [
   { name: "Apple Music", href: "https://music.apple.com/br/album/the-velvet-margin/6790796580" },
 ];
 
-const previews = ["Ink on the Shore", "Strange Magnolia", "The Shared Spectrum"];
+const previews = [
+  { title: "Ink on the Shore", src: "/audio/ink-on-the-shore-preview.mp3" },
+  { title: "Strange Magnolia", src: "/audio/strange-magnolia-preview.mp3" },
+  { title: "The Shared Spectrum", src: "/audio/the-shared-spectrum-preview.mp3" },
+];
+
+function formatTime(value: number) {
+  if (!Number.isFinite(value)) return "0:00";
+  const minutes = Math.floor(value / 60);
+  const seconds = Math.floor(value % 60).toString().padStart(2, "0");
+  return `${minutes}:${seconds}`;
+}
 
 export default function AlbumPage() { return <SiteShell><AlbumContent /></SiteShell>; }
 
 function AlbumContent() {
   const { language } = useSiteLanguage();
   const pt = language === "pt";
+  const audioRefs = useRef<(HTMLAudioElement | null)[]>([]);
+  const [playingIndex, setPlayingIndex] = useState<number | null>(null);
+  const [times, setTimes] = useState<number[]>(previews.map(() => 0));
+  const [durations, setDurations] = useState<number[]>(previews.map(() => 0));
+
+  const toggleTrack = async (index: number) => {
+    const selected = audioRefs.current[index];
+    if (!selected) return;
+
+    if (playingIndex === index && !selected.paused) {
+      selected.pause();
+      setPlayingIndex(null);
+      return;
+    }
+
+    audioRefs.current.forEach((audio, audioIndex) => {
+      if (audio && audioIndex !== index) {
+        audio.pause();
+        audio.currentTime = 0;
+      }
+    });
+
+    try {
+      await selected.play();
+      setPlayingIndex(index);
+    } catch {
+      setPlayingIndex(null);
+    }
+  };
+
+  const seekTrack = (index: number, value: number) => {
+    const audio = audioRefs.current[index];
+    if (!audio) return;
+    audio.currentTime = value;
+    setTimes((current) => current.map((time, timeIndex) => timeIndex === index ? value : time));
+  };
 
   return <main className="inner-page album-page">
     <section className="album-page-hero">
@@ -49,7 +97,42 @@ function AlbumContent() {
 
     <section className="music-preview-section section-light" id="previews">
       <div className="section-lead dark-copy"><p className="kicker dark">{pt ? "PRÉVIAS DO PROJETO" : "PROJECT PREVIEWS"}</p><h2>{pt ? "Ouça a identidade musical de The Velvet Margin." : "Hear the musical identity of The Velvet Margin."}</h2><p>{pt ? "As gravações disponíveis são referências preliminares do repertório. As versões definitivas serão produzidas durante a execução do projeto aprovado no ProAC ICMS." : "The available recordings are preliminary references for the repertoire. Final versions will be produced during the execution of the approved ProAC ICMS project."}</p></div>
-      <div className="preview-track-list">{previews.map((track, index) => <article key={track}><span>0{index + 1}</span><h3>{track}</h3><p>{pt ? "Prévia musical disponível nas plataformas oficiais." : "Music preview available on official platforms."}</p></article>)}</div>
+
+      <div className="audio-player-list">
+        {previews.map((track, index) => {
+          const isPlaying = playingIndex === index;
+          const duration = durations[index] || 0;
+          const currentTime = times[index] || 0;
+          return <article className={`audio-player ${isPlaying ? "is-playing" : ""}`} key={track.title}>
+            <audio
+              ref={(element) => { audioRefs.current[index] = element; }}
+              src={track.src}
+              preload="metadata"
+              onLoadedMetadata={(event) => setDurations((current) => current.map((value, itemIndex) => itemIndex === index ? event.currentTarget.duration : value))}
+              onTimeUpdate={(event) => setTimes((current) => current.map((value, itemIndex) => itemIndex === index ? event.currentTarget.currentTime : value))}
+              onEnded={() => { setPlayingIndex(null); setTimes((current) => current.map((value, itemIndex) => itemIndex === index ? 0 : value)); }}
+            />
+            <button className="audio-play-button" type="button" onClick={() => toggleTrack(index)} aria-label={`${isPlaying ? (pt ? "Pausar" : "Pause") : (pt ? "Reproduzir" : "Play")} ${track.title}`}>
+              <span>{isPlaying ? "Ⅱ" : "▶"}</span>
+            </button>
+            <div className="audio-track-copy"><span className="audio-track-number">{String(index + 1).padStart(2, "0")}</span><h3>{track.title}</h3><p>{pt ? "Gravação preliminar • versão definitiva em produção" : "Preliminary recording • final version in production"}</p></div>
+            <div className="audio-progress-wrap">
+              <input
+                className="audio-progress"
+                type="range"
+                min="0"
+                max={duration || 0}
+                step="0.1"
+                value={Math.min(currentTime, duration || 0)}
+                onChange={(event) => seekTrack(index, Number(event.target.value))}
+                aria-label={pt ? `Progresso de ${track.title}` : `${track.title} progress`}
+              />
+              <div className="audio-time"><span>{formatTime(currentTime)}</span><span>{formatTime(duration)}</span></div>
+            </div>
+          </article>;
+        })}
+      </div>
+
       <div className="platform-actions">{platforms.map(platform => <a key={platform.name} className="button button-dark" href={platform.href} target="_blank" rel="noreferrer">{pt ? "Ouvir no" : "Listen on"} {platform.name} ↗</a>)}</div>
     </section>
   </main>;
