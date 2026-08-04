@@ -21,10 +21,24 @@ function HomeContent() {
         <div className="actions">
           <Link className="button button-gold" href="/patrocinio">{pt ? "Apresente à sua empresa" : "Present it to your company"}</Link>
           <Link className="button button-outline" href="/album#previews">{pt ? "Ouça as prévias" : "Hear the previews"}</Link>
-          <Link className="button button-outline" href="/album">{pt ? "Conheça o álbum" : "Discover the album"}</Link>
         </div>
       </div>
       <span className="photo-credit">THE VELVET MARGIN — 2026</span>
+    </section>
+
+    <section className="project-numbers section-light" aria-labelledby="project-numbers-title">
+      <div className="project-numbers-heading">
+        <p className="kicker dark">{pt ? "PROJETO EM NÚMEROS" : "PROJECT AT A GLANCE"}</p>
+        <h2 id="project-numbers-title">{pt ? "Uma realização cultural pronta para captação." : "A cultural initiative ready for sponsorship."}</h2>
+      </div>
+      <div className="project-numbers-grid">
+        <article><strong>R$ 100 mil</strong><span>{pt ? "valor aprovado" : "approved amount"}</span></article>
+        <article><strong>{pt ? "Até 10" : "Up to 10"}</strong><span>{pt ? "faixas autorais" : "original tracks"}</span></article>
+        <article><strong>1</strong><span>{pt ? "apresentação gratuita" : "free public performance"}</span></article>
+        <article><strong>1</strong><span>{pt ? "oficina gratuita" : "free workshop"}</span></article>
+        <article><strong>1</strong><span>{pt ? "registro audiovisual" : "audiovisual record"}</span></article>
+        <article><strong>2026–2027</strong><span>{pt ? "execução prevista" : "planned delivery"}</span></article>
+      </div>
     </section>
 
     <section className="home-intro section-light">
@@ -39,12 +53,12 @@ function HomeContent() {
     </section>
 
     <section className="home-sponsor-cta">
-      <p className="kicker">{pt ? "PARA EMPRESAS" : "FOR COMPANIES"}</p>
-      <h2>{pt ? "Transforme incentivo fiscal em cultura, impacto público e valor de marca." : "Turn tax incentives into culture, public impact and brand value."}</h2>
-      <p>{pt ? "The Velvet Margin é um projeto aprovado no ProAC ICMS, com álbum autoral, apresentação gratuita, oficina formativa e registro audiovisual. Sua empresa pode participar como patrocinadora e viabilizadora desta realização." : "The Velvet Margin is a ProAC ICMS-approved project featuring an original album, free public performance, educational workshop and audiovisual record. Your company can participate as a sponsor and enabler of this initiative."}</p>
+      <p className="kicker">{pt ? "OPORTUNIDADE PARA EMPRESAS" : "OPPORTUNITY FOR COMPANIES"}</p>
+      <h2>{pt ? "Associe sua marca a uma obra autoral com impacto cultural e entregas públicas." : "Connect your brand with an original work offering cultural impact and public outcomes."}</h2>
+      <p>{pt ? "O projeto reúne álbum, apresentação gratuita, oficina, distribuição digital e registro audiovisual, com reconhecimento institucional planejado para empresas patrocinadoras." : "The project combines an album, free public performance, workshop, digital release and audiovisual documentation, with planned institutional recognition for sponsors."}</p>
       <div className="actions">
         <Link className="button button-gold" href="/patrocinio">{pt ? "Conhecer a oportunidade" : "Explore the opportunity"}</Link>
-        <a className="button button-outline" href="https://wa.me/5511958608379?text=Olá%2C%20gostaria%20de%20apresentar%20o%20projeto%20The%20Velvet%20Margin%20à%20minha%20empresa." target="_blank" rel="noreferrer">{pt ? "Falar sobre patrocínio" : "Discuss sponsorship"}</a>
+        <Link className="button button-outline" href="/contato">{pt ? "Falar com a equipe" : "Talk to the team"}</Link>
       </div>
     </section>
   </main>;
