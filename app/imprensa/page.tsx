@@ -1,8 +1,7 @@
 "use client";
 
+import Link from "next/link";
 import { SiteShell, useSiteLanguage } from "../components/SiteShell";
-
-const email = "thevelvetmargin@hotmail.com";
 
 export default function PressPage() {
   return <SiteShell><PressContent /></SiteShell>;
@@ -27,13 +26,13 @@ function PressContent() {
       <p className="kicker">{pt ? "KIT DE IMPRENSA" : "PRESS KIT"}</p>
       <h1>{pt ? "Materiais oficiais do projeto." : "Official project materials."}</h1>
       <p>{pt
-        ? "Esta área centraliza os materiais de divulgação de The Velvet Margin. Enquanto os arquivos finais são organizados para download, solicitações podem ser feitas diretamente por e-mail."
-        : "This area brings together The Velvet Margin promotional materials. While final downloadable files are being organized, requests can be made directly by email."}</p>
+        ? "Esta área centraliza os materiais de divulgação de The Velvet Margin. Enquanto os arquivos finais são organizados para download, as solicitações podem ser enviadas pelo formulário do próprio site."
+        : "This area brings together The Velvet Margin promotional materials. While final downloadable files are being organized, requests can be sent through the website contact form."}</p>
     </header>
     <section className="press-grid">
       {items.map(([title, description], index) => <article className="press-card" key={title}>
         <div><span>0{index + 1}</span><h2>{title}</h2><p>{description}</p></div>
-        <a href={`mailto:${email}?subject=${encodeURIComponent(`${title} — The Velvet Margin`)}`}>{pt ? "Solicitar material" : "Request material"} →</a>
+        <Link href="/contato">{pt ? "Solicitar material" : "Request material"} →</Link>
       </article>)}
     </section>
   </main>;
