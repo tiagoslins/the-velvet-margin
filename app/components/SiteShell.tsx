@@ -8,8 +8,8 @@ type Language = "pt" | "en";
 const LanguageContext = createContext<{language: Language; setLanguage: (language: Language) => void}>({language: "pt", setLanguage: () => {}});
 
 const nav = {
-  pt: [["Início", "/"], ["A Banda", "/banda"], ["O Álbum", "/album"], ["Músicas", "/musicas"], ["Patrocínio", "/patrocinio"], ["Imprensa", "/imprensa"], ["Contato", "/contato"]],
-  en: [["Home", "/"], ["The Band", "/banda"], ["The Album", "/album"], ["Music", "/musicas"], ["Sponsorship", "/patrocinio"], ["Press", "/imprensa"], ["Contact", "/contato"]],
+  pt: [["Início", "/"], ["Artistas & Equipe", "/banda"], ["O Álbum", "/album"], ["Patrocínio", "/patrocinio"], ["Imprensa", "/imprensa"], ["Contato", "/contato"]],
+  en: [["Home", "/"], ["Artists & Team", "/banda"], ["The Album", "/album"], ["Sponsorship", "/patrocinio"], ["Press", "/imprensa"], ["Contact", "/contato"]],
 };
 
 export function useSiteLanguage() { return useContext(LanguageContext); }
