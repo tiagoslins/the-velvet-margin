@@ -2,7 +2,8 @@
 
 import { SiteShell, useSiteLanguage } from "../components/SiteShell";
 
-const email = "thevelvetmargin@hotmail.com";
+const email = "contato@thevelvetmargin.com.br";
+const commercialDeck = "/documentos/apresentacao-comercial-the-velvet-margin";
 
 export default function SponsorshipPage() {
   return <SiteShell><SponsorshipContent /></SiteShell>;
@@ -21,7 +22,7 @@ function SponsorshipContent() {
           ? "The Velvet Margin transforma memória, trabalho, resistência e liberdade negra em música autoral, formação e acesso cultural. Uma oportunidade de associar sua marca a uma obra relevante, com entregas públicas e presença institucional planejada."
           : "The Velvet Margin transforms Black memory, labor, resistance and freedom into original music, learning and cultural access. An opportunity to connect your brand with a relevant work, public outcomes and carefully planned institutional visibility."}</p>
         <div className="actions">
-          <a className="button button-gold" href={`mailto:${email}?subject=Patrocínio — The Velvet Margin`}>{pt ? "Solicitar apresentação comercial" : "Request the sponsorship deck"}</a>
+          <a className="button button-gold" href={commercialDeck} target="_blank" rel="noreferrer">{pt ? "Baixar apresentação comercial" : "Download sponsorship deck"}</a>
           <a className="button button-outline" href="#propostas">{pt ? "Conhecer as propostas" : "View sponsorship options"}</a>
         </div>
         <div className="approval-proof">
@@ -96,6 +97,9 @@ function SponsorshipContent() {
           <a href={`mailto:${email}?subject=Patrocinadora Principal — The Velvet Margin`}>{pt ? "Conversar sobre a cota Principal" : "Discuss Principal sponsorship"}<span>→</span></a>
         </article>
       </div>
+      <div className="actions">
+        <a className="button button-gold" href={commercialDeck} target="_blank" rel="noreferrer">{pt ? "Baixar proposta comercial completa" : "Download full sponsorship proposal"}</a>
+      </div>
       <p className="sponsorship-disclaimer">{pt ? "A participação da marca terá natureza de patrocínio cultural. Não implica cessão de direitos patrimoniais, propriedade sobre a obra ou naming rights. Toda aplicação será previamente validada e seguirá o plano aprovado, o Manual de Identidade Visual e as regras do ProAC ICMS." : "Brand participation is recognized as cultural sponsorship. It does not grant ownership, economic rights over the work or naming rights. Every brand application is subject to prior validation and must comply with the approved plan, visual identity manual and ProAC ICMS rules."}</p>
     </section>
 
@@ -112,8 +116,12 @@ function SponsorshipContent() {
 
     <section className="sponsor-close">
       <p className="kicker">{pt ? "PRÓXIMO PASSO" : "NEXT STEP"}</p><h2>{pt ? "Vamos construir uma parceria com significado, presença e legado." : "Let’s build a partnership with meaning, visibility and legacy."}</h2>
-      <p>{pt ? "Solicite a apresentação comercial completa ou uma versão personalizada para os objetivos da sua empresa." : "Request the full sponsorship deck or a version tailored to your company’s priorities."}</p>
-      <a className="button button-gold" href={`mailto:${email}?subject=Parceria cultural — The Velvet Margin`}>{pt ? "Falar com Tiago Lins" : "Contact Tiago Lins"}</a><a className="sponsor-email" href={`mailto:${email}`}>{email}</a>
+      <p>{pt ? "Baixe a apresentação comercial completa ou solicite uma versão personalizada para os objetivos da sua empresa." : "Download the full sponsorship deck or request a version tailored to your company’s priorities."}</p>
+      <div className="actions">
+        <a className="button button-gold" href={commercialDeck} target="_blank" rel="noreferrer">{pt ? "Baixar apresentação comercial" : "Download sponsorship deck"}</a>
+        <a className="button button-outline" href={`mailto:${email}?subject=Parceria cultural — The Velvet Margin`}>{pt ? "Falar com Tiago Lins" : "Contact Tiago Lins"}</a>
+      </div>
+      <a className="sponsor-email" href={`mailto:${email}`}>{email}</a>
     </section>
   </main>;
 }
