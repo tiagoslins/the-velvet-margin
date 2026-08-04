@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { SiteShell, useSiteLanguage } from "./components/SiteShell";
 
+const commercialDeck = "/documentos/apresentacao-comercial-the-velvet-margin";
+
 export default function Home() { return <SiteShell><HomeContent /></SiteShell>; }
 
 function HomeContent() {
@@ -57,7 +59,8 @@ function HomeContent() {
       <h2>{pt ? "Associe sua marca a uma obra autoral com impacto cultural e entregas públicas." : "Connect your brand with an original work offering cultural impact and public outcomes."}</h2>
       <p>{pt ? "O projeto reúne álbum, apresentação gratuita, oficina, distribuição digital e registro audiovisual, com reconhecimento institucional planejado para empresas patrocinadoras." : "The project combines an album, free public performance, workshop, digital release and audiovisual documentation, with planned institutional recognition for sponsors."}</p>
       <div className="actions">
-        <Link className="button button-gold" href="/patrocinio">{pt ? "Conhecer a oportunidade" : "Explore the opportunity"}</Link>
+        <a className="button button-gold" href={commercialDeck} target="_blank" rel="noreferrer">{pt ? "Baixar apresentação comercial" : "Download sponsorship deck"}</a>
+        <Link className="button button-outline" href="/patrocinio">{pt ? "Conhecer a oportunidade" : "Explore the opportunity"}</Link>
         <Link className="button button-outline" href="/contato">{pt ? "Falar com a equipe" : "Talk to the team"}</Link>
       </div>
     </section>
