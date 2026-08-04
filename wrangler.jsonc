@@ -4,5 +4,15 @@
   "compatibility_date": "2026-08-03",
   "assets": {
     "directory": "./out"
-  }
+  },
+  "routes": [
+    {
+      "pattern": "thevelvetmargin.com.br",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.thevelvetmargin.com.br",
+      "custom_domain": true
+    }
+  ]
 }
