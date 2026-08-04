@@ -1,15 +1,23 @@
+type AssetFetcher = {
+  fetch(request: Request): Promise<Response>;
+};
+
+type EmailMessage = {
+  to?: string;
+  from: string;
+  subject: string;
+  text?: string;
+  html?: string;
+  replyTo?: string;
+};
+
+type EmailBinding = {
+  send(message: EmailMessage): Promise<unknown>;
+};
+
 interface Env {
-  ASSETS: Fetcher;
-  CONTACT_EMAIL: {
-    send(message: {
-      to?: string;
-      from: string;
-      subject: string;
-      text: string;
-      html: string;
-      replyTo?: string;
-    }): Promise<{ messageId: string }>;
-  };
+  ASSETS: AssetFetcher;
+  CONTACT_EMAIL: EmailBinding;
 }
 
 type ContactPayload = {
@@ -55,7 +63,7 @@ export default {
 
     let payload: ContactPayload;
     try {
-      payload = await request.json<ContactPayload>();
+      payload = (await request.json()) as ContactPayload;
     } catch {
       return json({ success: false, error: "invalid_json" }, 400);
     }
