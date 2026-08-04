@@ -22,9 +22,13 @@ function HomeContent() {
           <h1 className="visually-hidden">The Velvet Margin</h1>
           <p className="kicker">SOUL • BLUES • {pt ? "CANÇÃO AUTORAL" : "ORIGINAL SONGS"}</p>
           <p className="hero-statement">{pt ? "Entre a margem e a liberdade." : "Between the margin and freedom."}</p>
+          <p className="hero-body">{pt
+            ? "Um álbum autoral sobre memória, trabalho, resistência e liberdade negra. Projeto aprovado no ProAC ICMS nº 56889, com captação autorizada de R$ 100.000,00."
+            : "An original album about Black memory, labor, resistance and freedom. Approved under ProAC ICMS project no. 56889, authorized to raise BRL 100,000."}</p>
           <div className="actions">
-            <Link className="button button-gold" href="/album">{pt ? "Conheça o álbum" : "Discover the album"}</Link>
-            <Link className="button button-outline" href="/banda">{pt ? "Conheça a banda" : "Meet the band"}</Link>
+            <Link className="button button-gold" href="/patrocinio">{pt ? "Patrocine o projeto" : "Sponsor the project"}</Link>
+            <Link className="button button-outline" href="/musicas">{pt ? "Ouça as prévias" : "Hear the previews"}</Link>
+            <Link className="button button-outline" href="/album">{pt ? "Conheça o álbum" : "Discover the album"}</Link>
           </div>
         </div>
         <span className="photo-credit">THE VELVET MARGIN — 2026</span>
@@ -52,7 +56,22 @@ function HomeContent() {
           <p>{pt
             ? "Dez faixas transformam memória, trabalho e resistência em uma travessia musical. The Velvet Margin confronta as marcas deixadas pela escravização e a permanência de estruturas que ainda limitam a liberdade e as possibilidades do povo negro."
             : "Ten tracks transform memory, labor and resistance into a musical journey. The Velvet Margin confronts the legacy of enslavement and the structures that still restrict Black freedom and possibility."}</p>
-          <Link className="button button-gold" href="/album">{pt ? "Explorar o álbum" : "Explore the album"}</Link>
+          <div className="actions">
+            <Link className="button button-gold" href="/album">{pt ? "Explorar o álbum" : "Explore the album"}</Link>
+            <Link className="button button-outline" href="/patrocinio">{pt ? "Conhecer o projeto cultural" : "View the cultural project"}</Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="home-sponsor-cta">
+        <p className="kicker">{pt ? "PATROCÍNIO CULTURAL" : "CULTURAL SPONSORSHIP"}</p>
+        <h2>{pt ? "Sua empresa pode ajudar esta obra a chegar ao público." : "Your company can help bring this work to the public."}</h2>
+        <p>{pt
+          ? "Apoie um projeto aprovado no ProAC ICMS, com álbum autoral, apresentação gratuita, oficina formativa e registro audiovisual."
+          : "Support a ProAC ICMS-approved project featuring an original album, free public performance, educational workshop and audiovisual record."}</p>
+        <div className="actions">
+          <Link className="button button-gold" href="/patrocinio">{pt ? "Ver proposta de patrocínio" : "View sponsorship proposal"}</Link>
+          <a className="button button-outline" href="https://wa.me/5511958608379?text=Olá%2C%20gostaria%20de%20conhecer%20o%20projeto%20The%20Velvet%20Margin." target="_blank" rel="noreferrer">WhatsApp</a>
         </div>
       </section>
     </main>
