@@ -57,8 +57,8 @@ function AlbumContent() {
       <div className="section-lead dark-copy"><p className="kicker dark">{pt ? "PRÉVIAS DO PROJETO" : "PROJECT PREVIEWS"}</p><h2>{pt ? "Ouça a identidade musical de The Velvet Margin." : "Hear the musical identity of The Velvet Margin."}</h2><p>{pt ? "As gravações disponíveis são referências preliminares do repertório. As versões definitivas serão produzidas durante a execução do projeto aprovado no ProAC ICMS." : "The available recordings are preliminary references for the repertoire. Final versions will be produced during the execution of the approved ProAC ICMS project."}</p></div>
 
       <div className="audio-player-list">
-        {previews.map((track, index) => <article className="audio-player native-audio-player" key={track.title}>
-          <div className="audio-track-copy"><span className="audio-track-number">{String(index + 1).padStart(2, "0")}</span><h3>{track.title}</h3><p>{pt ? "Gravação preliminar • versão definitiva em produção" : "Preliminary recording • final version in production"}</p></div>
+        {previews.map((track, index) => <article className="audio-player native-audio-player preview-card" key={track.title}>
+          <div className="audio-track-copy preview-copy"><span className="audio-track-number">{String(index + 1).padStart(2, "0")}</span><h3>{track.title}</h3><p>{pt ? "Gravação preliminar • versão definitiva em produção" : "Preliminary recording • final version in production"}</p></div>
           <audio controls preload="metadata" src={track.src}>
             {pt ? "Seu navegador não oferece suporte à reprodução de áudio." : "Your browser does not support audio playback."}
           </audio>
@@ -67,5 +67,50 @@ function AlbumContent() {
 
       <div className="platform-actions">{platforms.map(platform => <a key={platform.name} className="button button-dark" href={platform.href} target="_blank" rel="noreferrer">{pt ? "Ouvir no" : "Listen on"} {platform.name} ↗</a>)}</div>
     </section>
+
+    <style jsx>{`
+      .preview-card {
+        grid-template-columns: minmax(240px, 1fr) minmax(280px, 320px) !important;
+        gap: clamp(32px, 6vw, 82px) !important;
+        align-items: center !important;
+        min-height: 230px;
+      }
+
+      .preview-copy {
+        min-width: 0;
+        padding-right: 12px;
+      }
+
+      .preview-copy h3 {
+        max-width: 100%;
+        margin-right: 0;
+        overflow-wrap: normal;
+        word-break: normal;
+      }
+
+      .preview-card audio {
+        display: block;
+        width: 100%;
+        min-width: 0;
+        justify-self: end;
+      }
+
+      @media (max-width: 760px) {
+        .preview-card {
+          grid-template-columns: 1fr !important;
+          gap: 28px !important;
+          min-height: 0;
+        }
+
+        .preview-copy {
+          padding-right: 0;
+        }
+
+        .preview-card audio {
+          width: min(100%, 360px);
+          justify-self: start;
+        }
+      }
+    `}</style>
   </main>;
 }
