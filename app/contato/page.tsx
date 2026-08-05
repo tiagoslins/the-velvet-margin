@@ -75,35 +75,32 @@ function ContactContent() {
       </form>
     </section>
 
-    <div className="contact-photo contact-photo-sticky">
+    <div className="contact-photo contact-photo-full">
       <img src="/images/contato/imagem_contato.png" alt={pt ? "Silhueta de músicos durante uma apresentação" : "Silhouette of musicians performing"} />
     </div>
 
     <style jsx>{`
-      .contact-photo-sticky {
-        position: sticky;
-        top: 86px;
-        align-self: start;
-        height: calc(100vh - 86px);
-        min-height: 620px;
+      .contact-photo-full {
+        position: relative;
+        align-self: stretch;
+        min-height: 100%;
         overflow: hidden;
         background: #000;
       }
 
-      .contact-photo-sticky img {
+      .contact-photo-full img {
+        position: absolute;
+        inset: 0;
         width: 100%;
         height: 100%;
-        object-fit: contain;
+        object-fit: cover;
         object-position: center;
         background: #000;
         filter: none;
       }
 
       @media (max-width: 900px) {
-        .contact-photo-sticky {
-          position: relative;
-          top: auto;
-          height: auto;
+        .contact-photo-full {
           min-height: 0;
           aspect-ratio: 9 / 16;
         }
