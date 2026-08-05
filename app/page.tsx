@@ -17,9 +17,9 @@ function HomeContent() {
       <div className="hero-shade" />
       <div className="hero-copy-wrap">
         <h1 className="visually-hidden">The Velvet Margin</h1>
-        <p className="kicker">SOUL • BLUES • {pt ? "CANÇÃO AUTORAL" : "ORIGINAL SONGS"}</p>
-        <p className="hero-statement">{pt ? "Entre a margem e a liberdade." : "Between the margin and freedom."}</p>
-        <p className="hero-body">{pt ? "Um álbum autoral sobre memória, trabalho, resistência e liberdade negra. Projeto aprovado no ProAC ICMS nº 56889, com captação autorizada de R$ 100.000,00." : "An original album about Black memory, labor, resistance and freedom. Approved under ProAC ICMS project no. 56889, authorized to raise BRL 100,000."}</p>
+        <p className="kicker">SOUL • BLUES</p>
+        <p className="hero-statement">{pt ? "Onde a memória encontra voz." : "Where memory finds its voice."}</p>
+        <p className="hero-body">{pt ? "Música, memória e resistência em busca de liberdade." : "Music, memory and resistance in pursuit of freedom."}</p>
         <div className="actions">
           <Link className="button button-gold" href="/patrocinio">{pt ? "Apresente à sua empresa" : "Present it to your company"}</Link>
           <Link className="button button-outline" href="/album#previews">{pt ? "Ouça as prévias" : "Hear the previews"}</Link>
