@@ -7,7 +7,7 @@ const tracks = [
   ["The Iron Cradle", "Herança industrial, corpos consumidos pela máquina e futuros trocados pelo lucro.", "An industrial inheritance, bodies consumed by the machine and futures traded for profit."],
   ["Strange Magnolia", "Raízes, memória e beleza negra resistindo à poda, à vigilância e à violência.", "Roots, memory and Black beauty resisting confinement, surveillance and violence."],
   ["The 5 AM Communion", "A liturgia diária de quem desperta antes da cidade e entrega mais do que recebe.", "The daily ritual of those who rise before the city and give more than they receive."],
-  ["The Glass Canopy", "A distância entre quem vive acima do vidro e quem sustenta, no chão, toda a estrutura.", "The distance between those above the glass and those on the ground holding up the entire structure."],
+  ["The Glass Canopy", "A distância entre quem vive e quem sustenta, no chão, toda a estrutura.", "The distance between those who live and those on the ground holding up the entire structure."],
   ["The Ledger of Souls", "A redução da vida a números, ativos e mão de obra descartável.", "The reduction of human life to numbers, assets and disposable labor."],
   ["Static on the Wire", "O ruído que encobre o racismo estrutural, a violência e uma justiça que nunca chega.", "The noise that conceals structural racism, violence and a justice that never arrives."],
   ["Neon Pastures", "Consumo, dívida e a promessa de pertencimento a um mundo construído por outros.", "Consumption, debt and the promise of belonging to a world built by others."],
