@@ -74,6 +74,40 @@ function ContactContent() {
         {status && <p className="form-status" role="status" aria-live="polite">{status}</p>}
       </form>
     </section>
-    <div className="contact-photo"><img src="/contact-band.webp" alt={pt ? "Silhueta de músicos durante uma apresentação" : "Silhouette of musicians performing"} style={{ objectFit: "contain", objectPosition: "center", filter: "none", background: "#000" }} /></div>
+
+    <div className="contact-photo contact-photo-sticky">
+      <img src="/images/contato/imagem_contato.png" alt={pt ? "Silhueta de músicos durante uma apresentação" : "Silhouette of musicians performing"} />
+    </div>
+
+    <style jsx>{`
+      .contact-photo-sticky {
+        position: sticky;
+        top: 86px;
+        align-self: start;
+        height: calc(100vh - 86px);
+        min-height: 620px;
+        overflow: hidden;
+        background: #000;
+      }
+
+      .contact-photo-sticky img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+        background: #000;
+        filter: none;
+      }
+
+      @media (max-width: 900px) {
+        .contact-photo-sticky {
+          position: relative;
+          top: auto;
+          height: auto;
+          min-height: 0;
+          aspect-ratio: 9 / 16;
+        }
+      }
+    `}</style>
   </main>;
 }
