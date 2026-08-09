@@ -1,0 +1,37 @@
+.band-manifesto {
+  position: relative;
+  z-index: 1;
+}
+
+.member-portrait {
+  position: relative;
+}
+
+.member-portrait > .photo-credit {
+  position: static;
+  display: block;
+  margin-top: 10px;
+  color: #7a6f62;
+  font-size: 8px;
+  letter-spacing: .18em;
+  line-height: 1.4;
+}
+
+.bio-modal-portrait {
+  position: relative;
+}
+
+.bio-modal-portrait > .photo-credit {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  z-index: 2;
+  margin: 0;
+  color: #d8c8b4;
+  text-shadow: 0 1px 6px rgba(0,0,0,.85);
+}
+
+.band-page-hero .photo-credit,
+.band-manifesto .photo-credit {
+  display: none !important;
+}
