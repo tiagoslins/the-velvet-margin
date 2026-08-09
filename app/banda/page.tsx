@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { SiteShell, useSiteLanguage } from "../components/SiteShell";
 
-type Member = {
+type Person = {
   name: string;
   rolePt: string;
   roleEn: string;
@@ -12,163 +12,82 @@ type Member = {
   initials?: string;
   bioPt?: string[];
   bioEn?: string[];
+  photoCreditPt?: string;
+  photoCreditEn?: string;
 };
 
-const members: Member[] = [
+const artists: Person[] = [
   {
-    name: "Arthur Krena",
-    rolePt: "Voz principal",
-    roleEn: "Lead vocals",
-    image: "/arthur-krena.jpg.png",
-    className: "portrait-vertical",
-    bioPt: [
-      "Arthur Krena é cantor com uma trajetória musical iniciada ainda na infância, influenciado diretamente pelo ambiente familiar e pela convivência com o pai, músico profissional que atuava em apresentações e projetos ligados ao blues e ao rock. Foi nesse contexto que a música passou a fazer parte de sua formação pessoal e artística.",
-      "Sua experiência vocal ganhou força na igreja, onde começou a cantar e a participar de grupos de louvor, desenvolvendo suas primeiras vivências de palco, apresentações e projetos musicais. Ao longo desse processo, consolidou a voz como uma de suas principais formas de expressão e comunicação artística.",
-      "Paralelamente à música, Arthur também atua como ilustrador e designer gráfico, trabalhando com diferentes linguagens visuais. Em The Velvet Margin, assume os vocais principais, unindo sensibilidade interpretativa, experiência musical e uma trajetória marcada pela relação entre voz, imagem e narrativa.",
-    ],
-    bioEn: [
-      "Arthur Krena is a singer whose musical journey began in childhood, directly influenced by his family environment and by growing up alongside his father, a professional musician who performed and worked on projects connected to blues and rock. In that context, music became part of his personal and artistic development.",
-      "His vocal experience grew stronger in church, where he began singing and taking part in worship groups, developing his first experiences on stage, in performances, and in musical projects. Throughout this process, he established his voice as one of his main forms of artistic expression and communication.",
-      "Alongside music, Arthur also works as an illustrator and graphic designer, engaging with different visual languages. In The Velvet Margin, he takes on lead vocals, bringing together interpretive sensitivity, musical experience, and a trajectory shaped by the relationship between voice, image, and narrative.",
-    ],
+    name: "Arthur Krena", rolePt: "Voz principal", roleEn: "Lead vocals", image: "/arthur-krena.jpg.png", className: "portrait-vertical",
+    bioPt: ["Arthur Krena é cantor com uma trajetória musical iniciada ainda na infância, influenciado diretamente pelo ambiente familiar e pela convivência com o pai, músico profissional que atuava em apresentações e projetos ligados ao blues e ao rock. Foi nesse contexto que a música passou a fazer parte de sua formação pessoal e artística.", "Sua experiência vocal ganhou força na igreja, onde começou a cantar e a participar de grupos de louvor, desenvolvendo suas primeiras vivências de palco, apresentações e projetos musicais. Ao longo desse processo, consolidou a voz como uma de suas principais formas de expressão e comunicação artística.", "Paralelamente à música, Arthur também atua como ilustrador e designer gráfico, trabalhando com diferentes linguagens visuais. Em The Velvet Margin, assume os vocais principais, unindo sensibilidade interpretativa, experiência musical e uma trajetória marcada pela relação entre voz, imagem e narrativa."],
+    bioEn: ["Arthur Krena is a singer whose musical journey began in childhood, directly influenced by his family environment and by growing up alongside his father, a professional musician who performed and worked on projects connected to blues and rock. In that context, music became part of his personal and artistic development.", "His vocal experience grew stronger in church, where he began singing and taking part in worship groups, developing his first experiences on stage, in performances and in musical projects. Throughout this process, he established his voice as one of his main forms of artistic expression and communication.", "Alongside music, Arthur also works as an illustrator and graphic designer, engaging with different visual languages. In The Velvet Margin, he takes on lead vocals, bringing together interpretive sensitivity, musical experience and a trajectory shaped by the relationship between voice, image and narrative."],
   },
   {
-    name: "Diego Aquino",
-    rolePt: "Contrabaixo",
-    roleEn: "Bass",
-    image: "/members/diego-aquino.webp",
-    className: "portrait-vertical",
+    name: "Diego Aquino", rolePt: "Contrabaixo", roleEn: "Bass", image: "/members/diego-aquino-nova2.webp.jpeg", className: "portrait-vertical",
+    bioPt: ["Diego Aquino é baixista e produtor musical com mais de duas décadas de atuação na cena independente de São Paulo. Formado no Curso Técnico de Baixo Elétrico do Conservatório Souza Lima, desenvolveu uma linguagem marcada pela precisão rítmica e pelas influências da Black Music, do soul e do R&B dos anos 1970.", "Cofundador das bandas Oyster Movement e Acajá, participou da gravação do EP Allow Me Inside, produzido por André Christovam nos Mosh Studios e incluído na lista de consideração para o 55º Grammy Awards. Também atua como sideman e produtor ao lado de diversos artistas da música independente paulistana.", "No The Velvet Margin, contribui como baixista, trazendo experiência de palco, sensibilidade musical e profundo domínio das linguagens do soul, do R&B e da música negra contemporânea."],
+    bioEn: ["Diego Aquino is a bassist and music producer with more than two decades of experience in São Paulo's independent music scene. Trained in Electric Bass at Conservatório Souza Lima, he developed a style shaped by rhythmic precision and the influence of 1970s Black Music, soul and R&B.", "A co-founder of Oyster Movement and Acajá, he performed on the EP Allow Me Inside, produced by André Christovam at Mosh Studios and submitted for consideration for the 55th Grammy Awards. He also works as a sideman and producer with a wide range of artists from São Paulo's independent scene.", "For The Velvet Margin, he contributes as bassist, bringing extensive stage experience, musical sensitivity and a deep command of soul, R&B and contemporary Black music."],
+  },
+  { name: "Yves Remont", rolePt: "Guitarra", roleEn: "Guitar", image: "/members/yves-remont.webp", className: "portrait-vertical" },
+  {
+    name: "Rubens de Oliveira", rolePt: "Bateria e percussão", roleEn: "Drums and percussion", image: "/members/rubens-de-oliveira.webp", className: "portrait-wide",
+    photoCreditPt: "Foto: Lucas Bonetti",
+    photoCreditEn: "Photo: Lucas Bonetti",
+    bioPt: ["Rubens de Oliveira é percussionista, baterista, compositor e arranjador, com uma trajetória que transita entre a música de concerto e a música popular. Sua formação inclui estudos na EMESP, na Escola Municipal de Música de São Paulo, na Universidade de São Paulo e na Universidade Federal de Minas Gerais, com especialização em percussão e bateria.", "Atua como timpanista e chefe do naipe de percussão da Orquestra do Theatro São Pedro. Paralelamente, desenvolve trabalhos como compositor e arranjador na companhia Circo Enxame e no grupo instrumental Ôctôctô, ampliando sua atuação entre repertórios orquestrais, criação autoral e música instrumental.", "Ao longo de sua carreira, participou de apresentações em diferentes países e de gravações com a Orquestra Jovem Tom Jobim, Karin Fernandes, Palavra Cantada e Tom Zé. Em The Velvet Margin, contribui com sua experiência, versatilidade e domínio técnico da percussão e da bateria, fortalecendo a dimensão rítmica e musical do projeto."],
+    bioEn: ["Rubens de Oliveira is a percussionist, drummer, composer and arranger whose career moves between classical and popular music. His training includes studies at EMESP, the São Paulo Municipal School of Music, the University of São Paulo and the Federal University of Minas Gerais, with a focus on percussion and drums.", "He works as a timpanist and head of the percussion section at the Theatro São Pedro Orchestra. In parallel, he develops projects as a composer and arranger with the Circo Enxame company and the instrumental group Ôctôctô, expanding his work across orchestral repertoire, original creation and instrumental music.", "Throughout his career, he has performed in different countries and taken part in recordings with the Tom Jobim Youth Orchestra, Karin Fernandes, Palavra Cantada and Tom Zé. In The Velvet Margin, he contributes his experience, versatility and technical command of percussion and drums, strengthening the project’s rhythmic and musical dimension."],
   },
   {
-    name: "Yves Remont",
-    rolePt: "Guitarra",
-    roleEn: "Guitar",
-    image: "/members/yves-remont.webp",
-    className: "portrait-vertical",
-  },
-  {
-    name: "Rubens de Oliveira",
-    rolePt: "Bateria e percussão",
-    roleEn: "Drums and percussion",
-    image: "/members/rubens-de-oliveira.webp",
-    className: "portrait-wide",
-    bioPt: [
-      "Rubens de Oliveira possui ampla formação em música de concerto e música popular. Estudou em instituições como a Escola de Música do Estado de São Paulo (EMESP), a Escola Municipal de Música de São Paulo, a Universidade de São Paulo (USP) e a Universidade Federal de Minas Gerais (UFMG), especializando-se em percussão e bateria.",
-      "É timpanista e chefe do naipe de percussão da Orquestra do Theatro São Pedro. Também atua como compositor e arranjador na companhia Circo Enxame e no grupo de música instrumental Ôctôctô.",
-      "Ao longo de sua trajetória, apresentou-se em diversos países, tanto em concertos quanto em projetos de música popular. Participou de importantes gravações, incluindo álbuns da Orquestra Jovem Tom Jobim e da pianista Karin Fernandes com a Orquestra do Theatro São Pedro, além dos discos Pé com Pé, do grupo Palavra Cantada, e Vira Lata na Via Láctea, do cantor e compositor Tom Zé.",
-    ],
-    bioEn: [
-      "Rubens de Oliveira has an extensive background in classical and popular music. He studied at institutions including the São Paulo State Music School (EMESP), the São Paulo Municipal School of Music, the University of São Paulo (USP), and the Federal University of Minas Gerais (UFMG), specializing in percussion and drums.",
-      "He is principal timpanist and head of the percussion section at the Theatro São Pedro Orchestra. He also works as a composer and arranger with the Circo Enxame company and the instrumental music group Ôctôctô.",
-      "Throughout his career, he has performed in several countries in both classical concerts and popular music projects. His recording credits include albums by the Tom Jobim Youth Orchestra and pianist Karin Fernandes with the Theatro São Pedro Orchestra, as well as Pé com Pé by Palavra Cantada and Vira Lata na Via Láctea by singer-songwriter Tom Zé.",
-    ],
-  },
-  {
-    name: "Tiago Lins",
-    rolePt: "Composição, produção musical e engenharia de áudio",
-    roleEn: "Songwriting, music production and audio engineering",
-    image: "/members/tiago-lins-bio.webp",
-    className: "portrait-vertical",
-    bioPt: [
-      "Tiago Lins é compositor, produtor musical e engenheiro de áudio formado em Audio Recording and Production pelo Institute of Audio Research, em Nova York, Estados Unidos. Também é cientista social pela Universidade Federal de São Carlos (UFSCar).",
-      "Sua trajetória reúne composição, gravação, produção musical, edição, mixagem e masterização, além de trabalhos em audiovisual, podcasts e conteúdo digital. Sua experiência técnica também abrange produção de áudio para cinema e videogames, sound design e implementação de áudio interativo na Unreal Engine.",
-      "Idealizador de The Velvet Margin, Tiago conduz a criação das canções e a identidade sonora do projeto, no qual atua como responsável artístico, produtor musical e coordenador executivo.",
-    ],
-    bioEn: [
-      "Tiago Lins is a songwriter, music producer, and audio engineer trained in Audio Recording and Production at the Institute of Audio Research in New York City, United States. He also holds a degree in Social Sciences from the Federal University of São Carlos (UFSCar).",
-      "His career spans songwriting, recording, music production, editing, mixing, and mastering, as well as work in audiovisual media, podcasts, and digital content. His technical experience also includes audio production for film and video games, sound design, and interactive audio implementation in Unreal Engine.",
-      "As the creator of The Velvet Margin, Tiago leads the songwriting and sonic identity of the project, serving as its artistic director, music producer, and executive coordinator.",
-    ],
+    name: "Anderson Kafé", rolePt: "Percussão", roleEn: "Percussion", image: "/members/anderson-kafe-nova.webp.jpeg", className: "portrait-vertical",
+    bioPt: ["Anderson Kafé é percussionista, natural da Vila Nova Cachoeirinha, Zona Norte de São Paulo, com uma trajetória construída ao longo de quase três décadas de atuação na cena musical paulistana. Iniciou sua caminhada participando de projetos regionais ligados ao forró pé de serra, maracatu, MPB, reggae e samba, desenvolvendo sua identidade musical a partir do contato direto com diferentes manifestações da música brasileira.", "Sua formação inclui cursos livres de percussão no SESC Vila Mariana, onde estudou por aproximadamente dois anos após conquistar uma bolsa, e posteriormente no Conservatório Souza Lima. Paralelamente aos estudos, consolidou sua experiência por meio de apresentações, projetos independentes e trabalhos realizados na noite de São Paulo, construindo uma formação fortemente ligada à prática musical e à vivência de palco.", "Atualmente, integra a banda Let’s Bowie e a Orikimbanda Afrorock. Em The Velvet Margin, atua como percussionista, contribuindo com sua experiência, diversidade rítmica e uma trajetória marcada pela cultura popular, pela música afro-brasileira e pela prática musical profissional."],
+    bioEn: ["Anderson Kafé is a percussionist from Vila Nova Cachoeirinha, in the North Zone of São Paulo, with a career spanning nearly three decades in the city’s music scene. He began his journey performing in regional projects connected to forró pé de serra, maracatu, MPB, reggae and samba, shaping his musical identity through direct contact with different expressions of Brazilian music.", "His training includes free percussion courses at SESC Vila Mariana, where he studied for approximately two years after receiving a scholarship, and later at Conservatório Souza Lima. Alongside his studies, he built his experience through live performances, independent projects and work in São Paulo’s nightlife, developing a musical background deeply rooted in practice and stage experience.", "He currently performs with Let’s Bowie and Orikimbanda Afrorock. In The Velvet Margin, he works as percussionist, bringing his experience, rhythmic diversity and a trajectory shaped by popular culture, Afro-Brazilian music and professional musical practice."],
   },
 ];
 
-export default function BandPage() {
-  return <SiteShell><BandContent /></SiteShell>;
-}
+const team: Person[] = [
+  {
+    name: "Tiago dos Santos Lins", rolePt: "Proponente, compositor, produtor musical e coordenação executiva", roleEn: "Project lead, songwriter, music producer and executive coordinator", image: "/members/tiago-lins-bio.webp", className: "portrait-vertical",
+    bioPt: ["Tiago Lins é compositor, produtor musical e engenheiro de áudio formado em Audio Recording and Production pelo Institute of Audio Research, em Nova York. Também é cientista social pela Universidade Federal de São Carlos.", "Sua trajetória reúne composição, gravação, produção musical, edição, mixagem e masterização, além de trabalhos em audiovisual, podcasts, cinema, videogames, sound design e áudio interativo na Unreal Engine.", "Idealizador de The Velvet Margin, conduz a criação das canções, a identidade sonora, a produção musical e a coordenação executiva do projeto."],
+    bioEn: ["Tiago Lins is a songwriter, music producer and audio engineer trained in Audio Recording and Production at the Institute of Audio Research in New York. He also holds a degree in Social Sciences from the Federal University of São Carlos.", "His work spans songwriting, recording, music production, editing, mixing and mastering, as well as audiovisual media, podcasts, film, video games, sound design and interactive audio in Unreal Engine.", "As the creator of The Velvet Margin, he leads the songwriting, sonic identity, music production and executive coordination of the project."],
+  },
+  {
+    name: "Txai Zerbeto Suares Souza", rolePt: "Direção de arte e design", roleEn: "Art direction and design", image: "https://raw.githubusercontent.com/tiagoslins/the-velvet-margin/main/public/members/Imagem%20do%20WhatsApp%20de%202025-03-04%20%C3%A0(s)%2011.17.14_3691b99e.jpg", className: "portrait-vertical",
+    bioPt: ["Txai Zerbeto Suares Souza atua como diretor de arte, designer, redator e ilustrador, com experiência na criação de identidades visuais, campanhas publicitárias, projetos editoriais e peças gráficas para diferentes formatos de comunicação.", "Sua trajetória inclui campanhas para Max Titanium e projetos institucionais para o Istituto Europeo di Design, nos quais trabalhou com conceito visual, composição, paleta de cores, tipografia e integração entre texto e linguagem gráfica. Também desenvolve capas, cartazes, folders, banners, publicações e ilustração independente.", "Em The Velvet Margin, é responsável por traduzir o conceito musical em linguagem visual, conduzindo a identidade do álbum, a capa, as peças digitais, os materiais de divulgação e a direção estética do projeto."],
+    bioEn: ["Txai Zerbeto Suares Souza works as an art director, designer, copywriter and illustrator, with experience in visual identities, advertising campaigns, editorial projects and graphic materials across multiple formats.", "His career includes campaigns for Max Titanium and institutional projects for Istituto Europeo di Design, working with visual concepts, composition, color palettes, typography and the integration of text and graphic language. He also develops covers, posters, folders, banners, publications and independent illustration.", "For The Velvet Margin, he translates the musical concept into a coherent visual language, leading the album identity, cover artwork, digital assets, promotional materials and overall art direction."],
+  },
+  {
+    name: "Dayanne Silva", rolePt: "Coordenação administrativa e direitos autorais", roleEn: "Administrative coordination and copyright", image: "/members/Dayanne%20Silva.jpeg", className: "portrait-vertical",
+    bioPt: ["Dayanne Silva é profissional com experiência na produção de eventos culturais, shows e projetos audiovisuais, atuando no planejamento, na organização e na execução de diferentes etapas de produção.", "Possui vivência em coordenação de equipes, logística, atendimento a artistas, contratação e relacionamento com fornecedores, contribuindo para a realização de projetos com eficiência, qualidade e impacto cultural.", "Em The Velvet Margin, é responsável pela coordenação administrativa e pelos direitos autorais, colaborando com a organização documental, o acompanhamento dos processos internos e o suporte à execução das atividades previstas."],
+    bioEn: ["Dayanne Silva is a professional with experience in the production of cultural events, concerts and audiovisual projects, working across planning, organization and execution.", "Her background includes team coordination, logistics, artist support, contracting and supplier relations, contributing to projects delivered with efficiency, quality and cultural impact.", "For The Velvet Margin, she is responsible for administrative coordination and copyright matters, supporting documentation, internal processes and the delivery of the project’s planned activities."],
+  },
+];
 
-function BandContent() {
+export default function BandPage() { return <SiteShell><PeopleContent /></SiteShell>; }
+
+function PeopleContent() {
   const { language } = useSiteLanguage();
   const pt = language === "pt";
-  const [selectedMember, setSelectedMember] = useState<Member | null>(null);
+  const [selected, setSelected] = useState<Person | null>(null);
 
   useEffect(() => {
-    if (!selectedMember) return;
-
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setSelectedMember(null);
-    };
-
-    const previousOverflow = document.body.style.overflow;
+    if (!selected) return;
+    const close = (event: KeyboardEvent) => { if (event.key === "Escape") setSelected(null); };
+    const previous = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-    window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("keydown", close);
+    return () => { document.body.style.overflow = previous; window.removeEventListener("keydown", close); };
+  }, [selected]);
 
-    return () => {
-      document.body.style.overflow = previousOverflow;
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [selectedMember]);
+  const renderPeople = (people: Person[]) => <div className="members-page-grid">{people.map((person, index) => {
+    const hasBio = Boolean(person.bioPt?.length && person.bioEn?.length);
+    const credit = pt ? person.photoCreditPt : person.photoCreditEn;
+    const content = <><div className={`portrait-image ${person.className}`}>{person.image ? <img src={person.image} alt={`${person.name} — ${pt ? person.rolePt : person.roleEn}`} /> : <div><span>{person.initials}</span><p>{pt ? "FOTO EM BREVE" : "PHOTO COMING SOON"}</p></div>}<span className="portrait-number">{String(index + 1).padStart(2, "0")}</span>{hasBio && <span className="portrait-action" aria-hidden="true">{pt ? "VER BIOGRAFIA" : "VIEW BIOGRAPHY"} <b>↗</b></span>}</div><h3>{person.name}</h3><p>{pt ? person.rolePt : person.roleEn}</p>{credit && <small className="photo-credit">{credit}</small>}</>;
+    return hasBio ? <button className="member-portrait member-card-button" type="button" key={person.name} onClick={() => setSelected(person)}>{content}</button> : <article className="member-portrait" key={person.name}>{content}</article>;
+  })}</div>;
 
   return <main className="inner-page">
-    <section className="page-hero band-page-hero">
-      <div className="page-hero-image"><img src="/members/rubens-de-oliveira.webp" alt={pt ? "Rubens de Oliveira em apresentação ao vivo" : "Rubens de Oliveira performing live"} /></div>
-      <div className="page-title"><p className="kicker">{pt ? "A BANDA" : "THE BAND"}</p><h1>{pt ? "Músicos de diferentes trajetórias. Uma mesma margem." : "Musicians from different paths. One shared margin."}</h1></div>
-    </section>
-
-    <section className="band-manifesto section-light">
-      <p className="section-index">01</p>
-      <div><h2>{pt ? "Intensidade, escuta e presença." : "Intensity, listening and presence."}</h2></div>
-      <div><p>{pt
-        ? "The Velvet Margin é um encontro entre soul e blues, construído por músicos que tratam cada canção como um espaço vivo. O repertório atravessa memória, espiritualidade, ruptura e reconstrução sem perder a força de uma banda tocando em conjunto."
-        : "The Velvet Margin brings soul and blues together through musicians who treat every song as a living space. The repertoire moves through memory, spirituality, rupture and reconstruction without losing the power of a band playing together."}</p></div>
-    </section>
-
-    <section className="members-section" aria-labelledby="members-heading">
-      <div className="members-heading">
-        <p className="kicker">{pt ? "INTEGRANTES" : "MEMBERS"}</p>
-        <h2 id="members-heading">{pt ? "Conheça os artistas" : "Meet the artists"}</h2>
-        <p>{pt ? "Selecione um artista para conhecer sua trajetória." : "Select an artist to learn about their journey."}</p>
-      </div>
-
-      <div className="members-page-grid">
-        {members.map((member, index) => {
-          const hasBio = Boolean(member.bioPt?.length && member.bioEn?.length);
-          const content = <>
-            <div className={`portrait-image ${member.className}`}>
-              {member.image
-                ? <img src={member.image} alt={`${member.name} — ${pt ? member.rolePt : member.roleEn}`} />
-                : <div><span>{member.initials}</span><p>{pt ? "FOTO EM BREVE" : "PHOTO COMING SOON"}</p></div>}
-              <span className="portrait-number">{String(index + 1).padStart(2, "0")}</span>
-              {hasBio && <span className="portrait-action" aria-hidden="true">{pt ? "VER BIOGRAFIA" : "VIEW BIOGRAPHY"} <b>↗</b></span>}
-            </div>
-            <h3>{member.name}</h3>
-            <p>{pt ? member.rolePt : member.roleEn}</p>
-          </>;
-
-          return hasBio
-            ? <button className="member-portrait member-card-button" type="button" key={member.name} onClick={() => setSelectedMember(member)} aria-label={`${pt ? "Abrir biografia de" : "Open biography for"} ${member.name}`}>{content}</button>
-            : <article className="member-portrait" key={member.name}>{content}</article>;
-        })}
-      </div>
-    </section>
-
-    {selectedMember && <div className="bio-modal-backdrop" role="presentation" onMouseDown={(event) => {
-      if (event.currentTarget === event.target) setSelectedMember(null);
-    }}>
-      <section className="bio-modal" role="dialog" aria-modal="true" aria-labelledby="bio-modal-title">
-        <button className="bio-modal-close" type="button" onClick={() => setSelectedMember(null)} aria-label={pt ? "Fechar biografia" : "Close biography"}>×</button>
-        <div className="bio-modal-portrait">
-          {selectedMember.image && <img src={selectedMember.image} alt="" />}
-        </div>
-        <div className="bio-modal-copy">
-          <p className="kicker">{pt ? "TRAJETÓRIA" : "BIOGRAPHY"}</p>
-          <h2 id="bio-modal-title">{selectedMember.name}</h2>
-          <p className="bio-modal-role">{pt ? selectedMember.rolePt : selectedMember.roleEn}</p>
-          <div className="bio-modal-text">
-            {(pt ? selectedMember.bioPt : selectedMember.bioEn)?.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-          </div>
-        </div>
-      </section>
-    </div>}
+    <section className="page-hero band-page-hero"><div className="page-hero-image"><img src="/members/rubens-de-oliveira.webp" alt="" /></div><div className="page-title"><p className="kicker">{pt ? "ARTISTAS & EQUIPE" : "ARTISTS & TEAM"}</p><h1>{pt ? "As pessoas que dão forma, som e direção ao projeto." : "The people shaping the project’s sound, image and direction."}</h1></div></section>
+    <section className="band-manifesto section-light"><p className="section-index">01</p><div><h2>{pt ? "Uma obra coletiva, conduzida por diferentes trajetórias." : "A collective work shaped by different paths."}</h2></div><div><p>{pt ? "The Velvet Margin reúne intérpretes, músicos, produção, direção de arte e gestão cultural em torno de uma mesma proposta: transformar memória, trabalho, resistência e liberdade em música, imagem e acesso público." : "The Velvet Margin brings together performers, musicians, production, art direction and cultural management around one purpose: transforming memory, labor, resistance and freedom into music, image and public access."}</p></div></section>
+    <section className="members-section"><div className="members-heading"><p className="kicker">{pt ? "NÚCLEO ARTÍSTICO" : "ARTISTIC CORE"}</p><h2>{pt ? "Conheça os artistas" : "Meet the artists"}</h2><p>{pt ? "As biografias e fotografias serão ampliadas conforme a equipe for confirmada." : "Biographies and photographs will be expanded as the team is confirmed."}</p></div>{renderPeople(artists)}</section>
+    <section className="members-section team-section section-light"><div className="members-heading"><p className="kicker dark">{pt ? "DIREÇÃO, PRODUÇÃO E GESTÃO" : "DIRECTION, PRODUCTION AND MANAGEMENT"}</p><h2>{pt ? "Quem estrutura a realização" : "The team behind the production"}</h2><p>{pt ? "Profissionais responsáveis pela criação, produção, identidade visual e organização do projeto." : "Professionals responsible for creation, production, visual identity and project organization."}</p></div>{renderPeople(team)}</section>
+    {selected && <div className="bio-modal-backdrop" role="presentation" onMouseDown={(event) => { if (event.currentTarget === event.target) setSelected(null); }}><section className="bio-modal" role="dialog" aria-modal="true" aria-labelledby="bio-title"><button className="bio-modal-close" type="button" onClick={() => setSelected(null)}>×</button><div className={`bio-modal-portrait ${selected.image ? "" : "portrait-placeholder"}`}>{selected.image ? <img src={selected.image} alt="" /> : <div><span>{selected.initials}</span></div>}{(pt ? selected.photoCreditPt : selected.photoCreditEn) && <small className="photo-credit">{pt ? selected.photoCreditPt : selected.photoCreditEn}</small>}</div><div className="bio-modal-copy"><p className="kicker">{pt ? "TRAJETÓRIA" : "BIOGRAPHY"}</p><h2 id="bio-title">{selected.name}</h2><p className="bio-modal-role">{pt ? selected.rolePt : selected.roleEn}</p><div className="bio-modal-text">{(pt ? selected.bioPt : selected.bioEn)?.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div></div></section></div>}
   </main>;
 }
-
