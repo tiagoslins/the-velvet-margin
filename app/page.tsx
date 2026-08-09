@@ -21,7 +21,7 @@ function HomeContent() {
         <p className="hero-statement">{pt ? "Onde a memória encontra voz." : "Where memory finds its voice."}</p>
         <p className="hero-body">{pt ? "Música, memória e resistência em busca de liberdade." : "Music, memory and resistance in pursuit of freedom."}</p>
         <div className="actions">
-          <Link className="button button-gold" href="/patrocinio">{pt ? "Apresente à sua empresa" : "Present it to your company"}</Link>
+          <Link className="button button-gold" href="/patrocinio">ProAC ICMS</Link>
           <Link className="button button-outline" href="/album#previews">{pt ? "Ouça as prévias" : "Hear the previews"}</Link>
         </div>
       </div>
