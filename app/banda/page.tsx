@@ -79,7 +79,7 @@ function PeopleContent() {
   const renderPeople = (people: Person[]) => <div className="members-page-grid">{people.map((person, index) => {
     const hasBio = Boolean(person.bioPt?.length && person.bioEn?.length);
     const credit = pt ? person.photoCreditPt : person.photoCreditEn;
-    const content = <><div className={`portrait-image ${person.className}`}>{person.image ? <img src={person.image} alt={`${person.name} — ${pt ? person.rolePt : person.roleEn}`} /> : <div><span>{person.initials}</span><p>{pt ? "FOTO EM BREVE" : "PHOTO COMING SOON"}</p></div>}<span className="portrait-number">{String(index + 1).padStart(2, "0")}</span>{hasBio && <span className="portrait-action" aria-hidden="true">{pt ? "VER BIOGRAFIA" : "VIEW BIOGRAPHY"} <b>↗</b></span>}</div><h3>{person.name}</h3><p>{pt ? person.rolePt : person.roleEn}</p>{credit && <small className="photo-credit">{credit}</small>}</>;
+    const content = <><div className={`portrait-image ${person.className}`}>{person.image ? <img src={person.image} alt={`${person.name} — ${pt ? person.rolePt : person.roleEn}`} /> : <div><span>{person.initials}</span><p>{pt ? "FOTO EM BREVE" : "PHOTO COMING SOON"}</p></div>}<span className="portrait-number">{String(index + 1).padStart(2, "0")}</span>{hasBio && <span className="portrait-action" aria-hidden="true">{pt ? "VER BIOGRAFIA" : "VIEW BIOGRAPHY"} <b>↗</b></span>}</div><h3>{person.name}</h3><p>{pt ? person.rolePt : person.roleEn}</p>{credit && <small className="member-photo-credit">{credit}</small>}</>;
     return hasBio ? <button className="member-portrait member-card-button" type="button" key={person.name} onClick={() => setSelected(person)}>{content}</button> : <article className="member-portrait" key={person.name}>{content}</article>;
   })}</div>;
 
