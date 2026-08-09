@@ -19,9 +19,18 @@ const members: Member[] = [
     name: "Arthur Krena",
     rolePt: "Voz principal",
     roleEn: "Lead vocals",
-    image: null,
-    initials: "AK",
-    className: "portrait-placeholder",
+    image: "/arthur-krena.jpg.png",
+    className: "portrait-vertical",
+    bioPt: [
+      "Arthur Krena é cantor com uma trajetória musical iniciada ainda na infância, influenciado diretamente pelo ambiente familiar e pela convivência com o pai, músico profissional que atuava em apresentações e projetos ligados ao blues e ao rock. Foi nesse contexto que a música passou a fazer parte de sua formação pessoal e artística.",
+      "Sua experiência vocal ganhou força na igreja, onde começou a cantar e a participar de grupos de louvor, desenvolvendo suas primeiras vivências de palco, apresentações e projetos musicais. Ao longo desse processo, consolidou a voz como uma de suas principais formas de expressão e comunicação artística.",
+      "Paralelamente à música, Arthur também atua como ilustrador e designer gráfico, trabalhando com diferentes linguagens visuais. Em The Velvet Margin, assume os vocais principais, unindo sensibilidade interpretativa, experiência musical e uma trajetória marcada pela relação entre voz, imagem e narrativa.",
+    ],
+    bioEn: [
+      "Arthur Krena is a singer whose musical journey began in childhood, directly influenced by his family environment and by growing up alongside his father, a professional musician who performed and worked on projects connected to blues and rock. In that context, music became part of his personal and artistic development.",
+      "His vocal experience grew stronger in church, where he began singing and taking part in worship groups, developing his first experiences on stage, in performances, and in musical projects. Throughout this process, he established his voice as one of his main forms of artistic expression and communication.",
+      "Alongside music, Arthur also works as an illustrator and graphic designer, engaging with different visual languages. In The Velvet Margin, he takes on lead vocals, bringing together interpretive sensitivity, musical experience, and a trajectory shaped by the relationship between voice, image, and narrative.",
+    ],
   },
   {
     name: "Diego Aquino",
