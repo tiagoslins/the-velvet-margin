@@ -1,0 +1,20 @@
+.member-photo-credit {
+  display:block;
+  position:static;
+  margin-top:8px;
+  color:#7f7467;
+  font-size:8px;
+  line-height:1.4;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+
+.team-section .member-portrait > p {
+  color:#6b4820;
+  font-weight:700;
+  letter-spacing:.18em;
+}
+
+.team-section .member-portrait h3 {
+  color:#18120d;
+}
