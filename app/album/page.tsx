@@ -37,7 +37,7 @@ function AlbumContent() {
 
   return <main className="inner-page album-page">
     <section className="album-page-hero">
-      <div className="album-page-cover"><img src="/the-velvet-margin-album.webp" alt={pt ? "Capa de The Velvet Margin" : "The Velvet Margin album cover"} width="1800" height="1800" decoding="async" fetchPriority="high" /></div>
+      <div className="album-page-cover"><img src="/the-velvet-margin-album.webp" alt={pt ? "Capa de The Velvet Margin" : "The Velvet Margin album cover"} width="1254" height="1254" decoding="async" fetchPriority="high" /></div>
       <div className="album-page-copy"><p className="kicker">{pt ? "ÁLBUM E MÚSICAS" : "ALBUM AND MUSIC"}</p><h1>The Velvet<br />Margin</h1><p>{pt ? "Um álbum autoral em dez movimentos sobre trabalho, memória, resistência e a busca do povo negro por liberdade plena." : "An original album in ten movements about labor, memory, resistance and the Black struggle for full freedom."}</p><span>{pt ? "EM PRODUÇÃO • LANÇAMENTO PREVISTO PARA 2027" : "IN PRODUCTION • EXPECTED IN 2027"}</span></div>
     </section>
 
