@@ -36,7 +36,7 @@ function HomeContent() {
     </section>
 
     <section className="album-feature">
-      <div className="album-cover-wrap"><img src="/the-velvet-margin-album.webp" alt={pt ? "Capa do primeiro álbum The Velvet Margin" : "The Velvet Margin debut album cover"} width="1800" height="1800" loading="lazy" decoding="async" /></div>
+      <div className="album-cover-wrap"><img src="/the-velvet-margin-album.webp" alt={pt ? "Capa do primeiro álbum The Velvet Margin" : "The Velvet Margin debut album cover"} width="1254" height="1254" loading="lazy" decoding="async" /></div>
       <div className="album-feature-copy"><p className="kicker">{pt ? "ÁLBUM E MÚSICAS" : "ALBUM AND MUSIC"}</p><h2>The Velvet Margin</h2><p>{pt ? "Dez faixas transformam memória, trabalho e resistência em uma travessia musical. Conheça o conceito, a lista de faixas e as prévias disponíveis." : "Ten tracks transform memory, labor and resistance into a musical journey. Explore the concept, track list and available previews."}</p><div className="actions"><Link className="button button-gold" href={route("/album")}>{pt ? "Explorar o álbum" : "Explore the album"}</Link><Link className="button button-outline" href={route("/album#previews")}>{pt ? "Ouvir prévias" : "Hear previews"}</Link></div></div>
     </section>
 

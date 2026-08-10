@@ -126,7 +126,7 @@ function SponsorshipContent() {
         </div>
       </div>
       <div className="sponsor-art-panel">
-        <img src="/the-velvet-margin-album.webp" alt={pt ? "Capa do álbum The Velvet Margin" : "The Velvet Margin album artwork"} width="1800" height="1800" loading="lazy" decoding="async" />
+        <img src="/the-velvet-margin-album.webp" alt={pt ? "Capa do álbum The Velvet Margin" : "The Velvet Margin album artwork"} width="1254" height="1254" loading="lazy" decoding="async" />
         <div className="sponsor-art-caption"><span>THE VELVET MARGIN</span><span>2026—2027</span></div>
       </div>
     </section>
