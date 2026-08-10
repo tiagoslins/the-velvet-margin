@@ -41,7 +41,8 @@ nav a:hover, nav a.active { color:var(--gold-light); border-bottom-color:var(--g
 .intro-copy p, .band-manifesto>div:last-child p, .music-coming>div:last-child>p { margin:4px 0 35px; color:#4b4238; font-size:15px; line-height:1.85; }
 .text-link { display:inline-flex; gap:22px; padding-bottom:8px; border-bottom:1px solid #9a7139; color:#5f421f; font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
 .album-feature { padding:120px 8vw; display:grid; grid-template-columns:minmax(300px,520px) 1fr; gap:10vw; align-items:center; background:#0b0a08; }
-.album-cover-wrap { box-shadow:0 35px 90px #000; }
+.album-cover-wrap { aspect-ratio:1/1; overflow:hidden; box-shadow:0 35px 90px #000; }
+.album-cover-wrap img { width:100%; height:auto; aspect-ratio:1/1; object-fit:contain; }
 .album-feature-copy { max-width:650px; }
 .album-feature h2 { margin:0; font:400 clamp(56px,6vw,90px)/.94 Georgia,serif; letter-spacing:-.045em; }
 .album-feature-copy>p:not(.kicker) { margin:27px 0 35px; color:var(--muted); font-size:16px; line-height:1.8; }
