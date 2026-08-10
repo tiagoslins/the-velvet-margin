@@ -95,7 +95,8 @@ nav a:hover, nav a.active { color:var(--gold-light); border-bottom-color:var(--g
 .creative-bio { padding-top:30px; border-top:1px solid var(--line); }
 .creative-bio p { margin:0 0 18px; color:var(--muted); font-size:15px; line-height:1.85; }
 .album-page-hero { min-height:calc(100svh - 86px); padding:85px 8vw; display:grid; grid-template-columns:minmax(330px,520px) 1fr; gap:10vw; align-items:center; }
-.album-page-cover { box-shadow:0 35px 100px #000; }
+.album-page-cover { aspect-ratio:1/1; overflow:hidden; box-shadow:0 35px 100px #000; }
+.album-page-cover img { width:100%; height:auto; aspect-ratio:1/1; object-fit:contain; }
 .album-page-copy h1 { margin:0; font:400 clamp(70px,8vw,120px)/.82 Georgia,serif; letter-spacing:-.055em; }
 .album-page-copy>p:not(.kicker) { max-width:610px; color:var(--muted); font-size:18px; line-height:1.7; margin:35px 0 25px; }
 .album-page-copy>span { color:var(--gold-light); font-size:9px; letter-spacing:.22em; }
@@ -233,7 +234,7 @@ footer>div a { color:var(--gold-light); }
 .sponsor-hero-copy { max-width:880px; }
 .sponsor-hero-corporate h1 { font-size:clamp(52px,5.9vw,90px); }
 .sponsor-art-panel { position:relative; }
-.sponsor-art-panel img { box-shadow:0 35px 100px #000; }
+.sponsor-art-panel img { width:100%; height:auto; aspect-ratio:1/1; object-fit:contain; box-shadow:0 35px 100px #000; }
 .sponsor-art-caption { display:flex; justify-content:space-between; padding:16px 2px 0; color:#70675c; font-size:8px; letter-spacing:.22em; }
 .approval-proof { margin-top:55px; padding:18px 0 18px 24px; display:flex; flex-direction:column; gap:7px; border-left:2px solid var(--gold); }
 .approval-proof strong { color:var(--ivory); font:400 16px Georgia,serif; }
