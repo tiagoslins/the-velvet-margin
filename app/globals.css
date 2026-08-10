@@ -221,6 +221,11 @@ footer>div a { color:var(--gold-light); }
   footer { padding:55px 24px; grid-template-columns:1fr; }
   footer>div { align-items:flex-start; }
 }
+
+:where(a,button,input,select,textarea):focus-visible { outline:3px solid var(--gold-light); outline-offset:3px; }
+@media (prefers-reduced-motion:reduce) {
+  *,*::before,*::after { scroll-behavior:auto!important; animation-duration:.01ms!important; animation-iteration-count:1!important; transition-duration:.01ms!important; }
+}
 @media (prefers-reduced-motion:reduce) { * { transition:none !important; } }
 
 /* Corporate sponsorship page */
