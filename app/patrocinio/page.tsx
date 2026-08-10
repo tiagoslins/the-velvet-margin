@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { SiteShell, useSiteLanguage } from "../components/SiteShell";
 
-const email = "thevelvetmargin@hotmail.com";
+const email = "contato@thevelvetmargin.com.br";
 const commercialDeck = "/documentos/apresentacao-comercial-the-velvet-margin.pdf";
 
 export default function SponsorshipPage() {
